@@ -12,11 +12,11 @@ export function CommentInput({ comments, setComments }: CommentInputProps) {
 
   const clickHandler = () => {
     if (inputRef.current?.value) {
-      if (inputRef.current.value.length > 40) {
+      if (inputRef.current.value.length > 42) {
         let newComment = "";
         for (let i = 0; i < inputRef.current.value.length; i++) {
           newComment += inputRef.current.value[i];
-          if (i % 43 === 0 && i !== 0) {
+          if ((i + 1) % 43 === 0 && i !== 0) {
             newComment += "\n";
           }
         }
